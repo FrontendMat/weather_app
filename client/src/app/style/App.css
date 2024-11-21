@@ -1,0 +1,14 @@
+.app {
+  min-height: 100vh;
+  overflow: auto;
+  padding: 40px;
+  display: grid; 
+  text-align: center;
+  background: linear-gradient(180deg, #BCE8FF 0%, #FFFFFF 41.26%);
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    padding: 16px;
+  }
+}

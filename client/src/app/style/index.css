@@ -1,0 +1,31 @@
+:root {
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --light-color: #FFFFFF;
+  --bg-color: #BCE8FF;
+  --primary-color: #2F5AF4;
+  --secondary-color: #0FA2AB;
+  --gray-color-30: #F2F6FF;
+  --gray-color-50: #CED6DD;
+  --gray-color-70: #8E9AA7;
+  --gray-color-80: #56626F;
+  --gray-color-90: #35424F;
+  --dark-color: #1C242B;
+
+  --border-radius: 8px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input,
+button {
+  margin: 0;
+  font: inherit;
+}

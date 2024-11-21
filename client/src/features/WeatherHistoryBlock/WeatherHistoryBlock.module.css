@@ -1,0 +1,59 @@
+.WeatherHistoryBlock {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 572px));
+    gap: 10px;
+    justify-content: center;
+}
+
+.WeatherHistoryBlock>.panel {
+    grid-column: 1 / -1;
+}
+
+.item {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .WeatherHistoryBlock {
+        grid-template-columns: 100%;
+    }
+
+    .btn {
+        position: absolute;
+    }
+
+    .title {
+        flex: 1;
+    } 
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+  
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }

@@ -1,0 +1,53 @@
+.WeatherInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img {
+    width: 278px;
+    height: 278px;
+    margin-bottom: 80px;
+}
+
+.location {
+    font-size: 20px;
+}
+
+.temperature {
+    font-size: 54px;
+}
+
+.weather {
+    color: var(--gray-color-90);
+}
+
+.info_text .location,
+.info_text .weather {
+    font-size: 16px;
+    text-align: start;
+}
+
+.info_ui {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info_ui .temperature {
+    font-size: 16px;
+}
+
+.info_ui .img {
+    width: 51px;
+    height: 51px;
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .img {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+    }
+}

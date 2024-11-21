@@ -1,0 +1,28 @@
+.container {
+    padding: 40px;
+    width: 100%;
+    max-width: 572px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.text {
+    text-align: start;
+    color: var(--gray-color-80)
+}
+
+.input {
+    margin-top: 12px;
+}
+
+.link {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+}

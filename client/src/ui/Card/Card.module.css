@@ -1,0 +1,5 @@
+.Card {
+    background-color: var(--gray-color-30);
+    border-radius: var(--border-radius);
+    padding: 12px;
+}
