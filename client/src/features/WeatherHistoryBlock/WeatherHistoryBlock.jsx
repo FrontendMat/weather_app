@@ -20,7 +20,7 @@ export const WeatherHistoryBlock = memo(() => {
 
     useEffect(() => {
         getHistory();
-        const data = getLocalstorageData(WEATHER_HISTORY, null);
+        const data = getLocalstorageData(WEATHER_HISTORY);
         setHistoryList(data);
     }, []);
 

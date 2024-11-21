@@ -3,8 +3,7 @@ export const setLocalstorageData = (key, data) => {
     localStorage.setItem(key, JSON.stringify(data));
 };
 
-export const getLocalstorageData = (key, defaultValue) => {
-    if (!defaultValue) return;
+export const getLocalstorageData = (key) => {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : defaultValue;
+    return data ? JSON.parse(data) : null;
 };

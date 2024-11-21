@@ -16,9 +16,9 @@ export const WeatherBlock = memo(() => {
     const { fetching, error, isLoading } = useFetching(getCurrentWeatherData);
 
     useEffect(() => {
-        const lastCity = getLocalstorageData(LAST_CITY_WEATHER, null);
+        const lastCity = getLocalstorageData(LAST_CITY_WEATHER);
         setCurrentWeather(lastCity);
-    }, [setCurrentWeather]);
+    }, [setCurrentWeather, getLocalstorageData]);
 
     const onWeatherSearch = async (city) => {
         const data = await fetching(city);

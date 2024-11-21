@@ -3,6 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 572px));
     gap: 10px;
     justify-content: center;
+    height: fit-content;
 }
 
 .WeatherHistoryBlock>.panel {
