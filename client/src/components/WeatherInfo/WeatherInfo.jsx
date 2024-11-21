@@ -9,7 +9,9 @@ export const WeatherInfo = memo((props) => {
 
     if (isLoading) return <Loader />;
 
-    if (error) return <div>{error}</div>
+    if (error) return <div>{error}</div>;
+
+    if (!data) return <div>{`No data(`}</div>;
 
     if (isCard) {
         return (

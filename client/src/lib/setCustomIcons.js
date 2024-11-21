@@ -1,19 +1,7 @@
 import { CustomIcons } from "@/lib/consts";
 
-export const setCustomIcons = (data) => {
-    const updatedData = data?.map((item) => {
-        const type = item.weatherType;
-        const newIcon = CustomIcons[type] || item.icon;
-        return {
-            ...item,
-            icon: newIcon,
-        };
-    });
-
-    return updatedData;
-};
-
 export const setCustomIcon = (data) => {
+    if (!data) return;
     const type = data.weatherType;
     const newIcon = CustomIcons[type] || data.icon;
 
@@ -22,3 +10,13 @@ export const setCustomIcon = (data) => {
         icon: newIcon,
     };
 };
+
+export const setCustomIcons = (data) => {
+    const updatedData = data?.map((item) => {
+        return setCustomIcon(item);
+    });
+
+    return updatedData;
+};
+
+

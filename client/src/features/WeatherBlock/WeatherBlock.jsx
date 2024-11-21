@@ -16,17 +16,17 @@ export const WeatherBlock = memo(() => {
     const { fetching, error, isLoading } = useFetching(getCurrentWeatherData);
 
     useEffect(() => {
-        const lastCity = getLocalstorageData(LAST_CITY_WEATHER);
+        const lastCity = getLocalstorageData(LAST_CITY_WEATHER, null);
         setCurrentWeather(lastCity);
     }, [setCurrentWeather]);
 
-    async function onWeatherSearch(city) {
+    const onWeatherSearch = async (city) => {
         const data = await fetching(city);
         setCurrentWeather(data);
         setLocalstorageData(LAST_CITY_WEATHER, data);
     }
 
-    const updatedData = setCustomIcon(currentWeather || {});
+    const updatedData = setCustomIcon(currentWeather);
 
     return (
         <div className={cls.WeatherBlock}>

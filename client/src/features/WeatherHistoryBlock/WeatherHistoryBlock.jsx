@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { getWeatherHistory } from "./api/getWeatherHistory";
 import { WeatherInfo } from "@/components/WeatherInfo/WeatherInfo";
 import cls from "./WeatherHistoryBlock.module.css";
@@ -8,6 +8,11 @@ import { setCustomIcons } from "@/lib/setCustomIcons";
 import { RoutePath } from "@/app/router/routeConfig";
 import { useFetching } from "@/lib/hooks/useFetching";
 import { Loader } from "@/ui/Loader/Loader";
+import {
+    setLocalstorageData,
+    getLocalstorageData,
+} from "@/lib/toggleLocalstorage";
+import { WEATHER_HISTORY } from "@/lib/consts";
 
 export const WeatherHistoryBlock = memo(() => {
     const [historyList, setHistoryList] = useState([]);
@@ -15,12 +20,15 @@ export const WeatherHistoryBlock = memo(() => {
 
     useEffect(() => {
         getHistory();
+        const data = getLocalstorageData(WEATHER_HISTORY, []);
+        setHistoryList(data);
     }, []);
 
-    const getHistory = async () => {
+    const getHistory = useCallback(async () => {
         const data = await fetching();
         setHistoryList(data);
-    };
+        setLocalstorageData(WEATHER_HISTORY, data);
+    }, [fetching]);
 
     const updatedData = setCustomIcons(historyList);
 

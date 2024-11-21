@@ -2,7 +2,7 @@ client/node_modules/
 server/node_modules/
 client/dist/
 server/dist/
-.env
+.idea
 .DS_Store
 
 # React Client
