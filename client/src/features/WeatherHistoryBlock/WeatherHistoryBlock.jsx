@@ -20,7 +20,7 @@ export const WeatherHistoryBlock = memo(() => {
 
     useEffect(() => {
         getHistory();
-        const data = getLocalstorageData(WEATHER_HISTORY, []);
+        const data = getLocalstorageData(WEATHER_HISTORY, null);
         setHistoryList(data);
     }, []);
 
@@ -45,7 +45,7 @@ export const WeatherHistoryBlock = memo(() => {
                 <h3 className={cls.title}>Weather History</h3>
             </div>
             {/* here we can add virtualized list and pagination */}
-            {updatedData?.length >= 0 ? (
+            {updatedData?.length > 0 ? (
                 updatedData?.map((item) => (
                     <WeatherInfo
                         key={item._id}
